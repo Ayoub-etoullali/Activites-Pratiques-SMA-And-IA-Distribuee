@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/92756846/222263598-0861eadf-a0c2-4467-b49d-6d023f63a570.png)
 
 ## TPs
-<a href="https://github.com/Ayoub-etoullali/Activites-Pratiques-BigData/tree/main/">
+<a href="https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/blob/main/">
   (1) Jeu multi joueurs avec les SMA </a> <br>
   
   <br>
