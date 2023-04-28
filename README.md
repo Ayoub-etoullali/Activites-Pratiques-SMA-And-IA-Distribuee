@@ -1,5 +1,5 @@
 # Activités Pratiques 👨🏻‍💻 
-<img src="[.gif](https://user-images.githubusercontent.com/92756846/235221626-035352df-72a0-4697-9eb5-085337f700d2.png)" alt="SMA" width="128" height="128">
+<img src="https://user-images.githubusercontent.com/92756846/235221626-035352df-72a0-4697-9eb5-085337f700d2.png" alt="SMA" width="128" height="128">
 
 ## TPs
 <a href="https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee">
