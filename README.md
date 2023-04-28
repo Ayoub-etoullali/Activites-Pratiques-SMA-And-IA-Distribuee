@@ -1,5 +1,5 @@
 # Activités Pratiques 👨🏻‍💻 
-![image](https://user-images.githubusercontent.com/92756846/235221312-ea6b44a6-710e-4526-a310-618ed5634f38.png)
+![image](https://user-images.githubusercontent.com/92756846/235221626-035352df-72a0-4697-9eb5-085337f700d2.png)
 
 ## TPs
 <a href="https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee">
