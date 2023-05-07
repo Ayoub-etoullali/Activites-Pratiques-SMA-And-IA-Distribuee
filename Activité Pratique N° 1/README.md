@@ -1,31 +1,17 @@
-# TP6: Ventes avec Structured Streaming en pyhton
+# Jeu multi joueurs avec les SMA
 
-## Exercice 1 : Word Count
+## Activité pratique :
+On souhaite à travers cette activité pratique de développer un simple jeu en utilisant les systèmes multi agents. Ce jeu multi joueurs permet de déterminer un nombre magique secret par des joueurs. Pour cela, définir un nombre magique (un nombre secret), c’est un nombre généré aléatoirement entre 0 et 100, utiliser la méthode statique random de la classe Math. Puis les joueurs vont tenter de trouver le nombre magique. Pour chaque tentation il faut indiquer au joueur s'il est en dessus ou au-dessous du nombre magique. 
 
-```
->>> from pyspark.sql import SparkSession
->>> from pyspark.sql.functions import explode
->>> from pyspark.sql.functions import split
->>> dfLines=spark.readStream.format("socket").option("host","localhost").option("port",8888).load()
->>> dfWords=dfLines.select(explode(split(dfLines["value"]," ")).alias("words"))
->>> dfWordCount=dfWords.groupBy("words").count()
->>> dfWordCount.writeStream.format("console").outputMode("update").trigger(processingTime='5 seconds').start().awaitForTermination()
-```
+Pour réaliser ce jeu, vous créez trois agents :
+  • Agent serveur : qui va générer aléatoirement le nombre magique et qui va recevoir les tentations des joueurs, une fois un joueur trouve le nombre magique, cet agent va envoyer un message à tous les joueurs pour l’informer du nombre magique trouvé et arrête le jeu, sinon va indiquer au joueur s'il est en dessus ou au-dessous du nombre magique.
+  • Agent joueur 1 : cet agent possède une interface graphique avec JavaFX, contenant une zone de texte pour saisir le nombre, un boutton pour envoyer le nombre et une liste pour afficher les messages envoyés par l’agent serveur.
+  • Agent joueur 2 : le même que l’agent joueur 1, cet agent va jouer contrer l’Agent joueur 1 et qui possède également une interface graphique JavaFX pour saisir un nombre et l’envoyer vers l’agent serveur pour tenter de trouver le nombre magique et une liste pour visualiser les messages envoyés par l’agent serveur.
 
-## Exercice 2 :
-![image](https://user-images.githubusercontent.com/92756846/224802856-e9fefc64-4178-4037-b94b-8b48dfdc1439.png)
-  
-  #### Fichier "ventes.txt"
-  ![image](https://user-images.githubusercontent.com/92756846/225772439-ea4eb6c8-1472-40a0-b109-bf214532374b.png)
-
-  ### Question 1 :
-
-  ### Question 2 : 
-
-#### Demo :
+## Demo :
 <div align="center">
        <p>
-       <sup>  <strong>Vidéo -</strong> Ventes avec Structured Streaming en pyhton</sup>
+       <sup>  <strong>Vidéo -</strong> Jeu multi joueurs avec les SMA</sup>
        </p>
 </div>
 
