@@ -1,20 +1,23 @@
-package ma.enset.aes;
+package ma.enset.rsa;
 
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 
 import javax.crypto.Cipher;
-import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import java.security.NoSuchAlgorithmException;
+import java.security.KeyFactory;
+import java.security.PrivateKey;
+import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
 
 public class ServerAgent extends Agent {
+
     @Override
     protected void setup() {
-        String password = (String) getArguments()[0];
+        String encodedPRK = (String) getArguments()[0];
+
         addBehaviour(new CyclicBehaviour() {
             @Override
             public void action() {
@@ -24,7 +27,7 @@ public class ServerAgent extends Agent {
                     System.out.println("encryptEncodedMsg = " + encryptEncodedMsg);
 
                     try {
-                        String receivedMsg=noJWT(encryptEncodedMsg, password);
+                        String receivedMsg=noJWT(encryptEncodedMsg, encodedPRK);
                         System.out.println("receivedMsg = "+receivedMsg);
                     } catch (Exception e) {
                         throw new RuntimeException(e);
@@ -36,20 +39,19 @@ public class ServerAgent extends Agent {
             }
         });
     }
-
-    private String noJWT(String encryptEncodedMsg, String password) throws Exception {
+    private String noJWT(String encryptEncodedMsg, String encodedPRK) throws Exception {
         // Decode
         byte[] encryptMsg = Base64.getDecoder().decode(encryptEncodedMsg); // Base64.getUrlDecoder()
+        byte[] decodedPRK = Base64.getDecoder().decode(encodedPRK);
         System.out.println("encryptMsg = " + encryptMsg);
-        // We need the password
-        String Msg = new String(encryptMsg);
-        System.out.println("Msg = " + Msg);
-        // Secret Key
-        SecretKey secretKey = new SecretKeySpec(password.getBytes(), "AES");
-        System.out.println("secretKey = " + secretKey);
+        // KeyFactory
+        KeyFactory keyFactory=KeyFactory.getInstance("RSA");
+        System.out.println("keyFactory = " + keyFactory);
+        PrivateKey privateKey = keyFactory.generatePrivate(new PKCS8EncodedKeySpec(decodedPRK));
+        System.out.println("privateKey = " + privateKey);
         // Cipher - DECRYPT_MODE
-        Cipher cipher = Cipher.getInstance("AES");
-        cipher.init(Cipher.DECRYPT_MODE,secretKey);
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.DECRYPT_MODE,privateKey);
         System.out.println("cipher = " + cipher);
         // Decrypt
         byte[] decryptMsg = cipher.doFinal(encryptMsg);
