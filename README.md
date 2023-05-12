@@ -1,5 +1,5 @@
 # Activités Pratiques 👨🏻‍💻 
-<img src="https://www.research-bl.com/wp-content/uploads/2022/08/Illustration-Mouna.jpg" alt="SMA" width="400" height="400">
+<img src="https://www.research-bl.com/wp-content/uploads/2022/08/Illustration-Mouna.jpg" alt="SMA">
 
 ## TPs
   <a href="https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/tree/main/Activit%C3%A9%20Pratique%20N%C2%B0%201">
