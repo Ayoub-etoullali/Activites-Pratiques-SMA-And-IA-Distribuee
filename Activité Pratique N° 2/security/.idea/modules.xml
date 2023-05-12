@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TP1_SMA_BDDC.iml" filepath="$PROJECT_DIR$/TP1_SMA_BDDC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/security.iml" filepath="$PROJECT_DIR$/security.iml" />
     </modules>
   </component>
 </project>
