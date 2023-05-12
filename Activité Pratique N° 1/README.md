@@ -12,6 +12,8 @@ Pour réaliser ce jeu, vous créez trois agents :
   Le même que l’agent joueur 1, cet agent va jouer contrer l’Agent joueur 1 et qui possède également une interface graphique JavaFX pour saisir un nombre et l’envoyer vers l’agent serveur pour tenter de trouver le nombre magique et une liste pour visualiser les messages envoyés par l’agent serveur.
 
 ## Demo :
+https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/e00a9f1c-843a-4c1a-b9ec-93259e00c781
+
 <div align="center">
        <p>
        <sup>  <strong>Vidéo -</strong> Jeu multi joueurs avec les SMA</sup>
