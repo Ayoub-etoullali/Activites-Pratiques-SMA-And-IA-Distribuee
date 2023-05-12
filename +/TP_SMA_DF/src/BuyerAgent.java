@@ -1,6 +1,8 @@
 import jade.core.AID;
+import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.OneShotBehaviour;
+import jade.core.behaviours.ParallelBehaviour;
 import jade.domain.DFService;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
@@ -9,7 +11,12 @@ import jade.gui.GuiAgent;
 import jade.gui.GuiEvent;
 import jade.lang.acl.ACLMessage;
 
-public class BuyerAgent extends GuiAgent {
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.util.Base64;
+
+public class BuyerAgent extends Agent {
     DFAgentDescription[] dfAgentDescriptions; //info about all services
     private AID bestSeller;
     private double bestPrice = Double.MAX_VALUE;
@@ -87,10 +94,5 @@ public class BuyerAgent extends GuiAgent {
         } catch (FIPAException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    @Override
-    protected void onGuiEvent(GuiEvent guiEvent) {
-
     }
 }

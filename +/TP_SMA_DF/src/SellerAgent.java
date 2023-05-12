@@ -1,5 +1,7 @@
+import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.OneShotBehaviour;
+import jade.core.behaviours.ParallelBehaviour;
 import jade.domain.DFService;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
@@ -8,7 +10,7 @@ import jade.gui.GuiAgent;
 import jade.gui.GuiEvent;
 import jade.lang.acl.ACLMessage;
 
-public class SellerAgent extends GuiAgent {
+public class SellerAgent extends Agent {
     private String price;
 
     @Override
@@ -74,10 +76,5 @@ public class SellerAgent extends GuiAgent {
         } catch (FIPAException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    @Override
-    protected void onGuiEvent(GuiEvent guiEvent) {
-
     }
 }
