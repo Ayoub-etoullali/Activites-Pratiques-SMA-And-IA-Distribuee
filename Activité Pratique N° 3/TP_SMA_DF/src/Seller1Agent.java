@@ -8,7 +8,7 @@ import jade.gui.GuiAgent;
 import jade.gui.GuiEvent;
 import jade.lang.acl.ACLMessage;
 
-public class SellerAgent extends GuiAgent {
+public class Seller1Agent extends GuiAgent {
     private String price;
 
     @Override
