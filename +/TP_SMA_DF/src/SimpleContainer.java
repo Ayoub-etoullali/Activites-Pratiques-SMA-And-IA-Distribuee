@@ -1,12 +1,15 @@
 import jade.core.Profile;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
+import jade.core.behaviours.ReceiverBehaviour;
 import jade.wrapper.AgentContainer;
 import jade.wrapper.AgentController;
 import jade.wrapper.ControllerException;
 
+import java.util.concurrent.TimeUnit;
+
 public class SimpleContainer {
-    public static void main(String[] args) throws ControllerException {
+    public static void main(String[] args) throws ControllerException, InterruptedException {
         Runtime runtime=Runtime.instance();
         ProfileImpl profile=new ProfileImpl();
         profile.setParameter(Profile.MAIN_HOST,"localhost");
@@ -18,6 +21,7 @@ public class SimpleContainer {
         seller1.start();
         seller2.start();
         seller3.start();
+        TimeUnit.SECONDS.sleep(1);
         buyer.start();
     }
 }

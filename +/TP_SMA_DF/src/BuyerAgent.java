@@ -34,6 +34,7 @@ public class BuyerAgent extends Agent {
                 dfAgentDescription.addServices(serviceDescription);
                 try {
                     dfAgentDescriptions = DFService.search(myAgent, dfAgentDescription);
+                    System.out.println(dfAgentDescriptions.length);
                     for (DFAgentDescription agentDescription : dfAgentDescriptions) {
                         AID sellerAID = agentDescription.getName();
                         ACLMessage aclMessage = new ACLMessage(ACLMessage.CFP); //CFP : Call For Proposer
