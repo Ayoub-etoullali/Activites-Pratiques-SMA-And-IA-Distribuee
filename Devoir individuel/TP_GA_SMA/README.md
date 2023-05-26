@@ -1,7 +1,7 @@
 # GA implementation using MAS
+https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/378397fe-b768-4fc2-90b4-f4540c095b8a
 
 ## Demo :
-https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/8ad90d81-cc4c-461b-8fa9-1961c0eb6739
 
 <div align="center">
        <p>
