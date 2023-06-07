@@ -7,8 +7,8 @@ public class QLearning {
     private final double ALPHA = 0.1; //learning rate, determines to what extent newly acquired information overrides old information
     private final double GAMMA = 0.9; //discount rate, determines the importance of future rewards
     private final double EPS = 0.4; //epsilon greedy, determines the probability of taking a random action, rather than action that gives a maximum value of Q
-    private final int MAX_EPOCH = 300;
-    private final int GRID_SIZE = 3;
+    private final int MAX_EPOCH = 90000;
+    private final int GRID_SIZE = 5;
     private final int ACTION_SIZE = 4;
     private int[][] grid;
     private double[][] qTable = new double[GRID_SIZE * GRID_SIZE][ACTION_SIZE];
@@ -30,21 +30,28 @@ public class QLearning {
      */
 
     public QLearning() {
-        this.grid = new int[][]{
+        /*this.grid = new int[][]{
                 {0, 0, 1},
                 {0, -1, 0},
                 {0, 0, 0}
+        };*/
+        this.grid = new int[][]{
+                {0, -1, 0, 0, 0},
+                {0, 0, 0, -1, 0},
+                {-1, -1, -1, 0, 0},
+                {-1, 1, -1, 0, -1},
+                {-1, 0, 0, 0, -1}
         };
         this.actions = new int[][]{
-                {0, -1}, //gouche
-                {0, 1}, //droite
-                {1, 0}, //bas
-                {-1, 0} //haut
+                {0, -1}, //Gauche
+                {0, 1}, //Droit
+                {1, 0}, //Bas
+                {-1, 0} //Haut
         };
     }
 
     private void resetState() {
-        stateI = 2;
+        stateI = 0;
         stateJ = 0;
     }
 
@@ -69,8 +76,8 @@ public class QLearning {
     }
 
     private int executeAction(int act) {
-        stateI = Math.max(0, Math.min(actions[act][0] + stateI, 2)); // pour éviter if else
-        stateJ = Math.max(0, Math.min(actions[act][1] + stateJ, 2));
+        stateI = Math.max(0, Math.min(actions[act][0] + stateI, GRID_SIZE - 1)); // pour éviter if else
+        stateJ = Math.max(0, Math.min(actions[act][1] + stateJ, GRID_SIZE - 1));
         return stateI * GRID_SIZE + stateJ;
     }
 
@@ -79,25 +86,40 @@ public class QLearning {
     }
 
     private void showResult() {
-        System.out.println("************************ Q Table ************************");
+        System.out.println("_____________________________________ Q Table _____________________________________");
         for (double line[] : qTable) {
             System.out.print("[");
             for (double qValue : line) {
-                System.out.print(qValue+",");
+                System.out.print(qValue + ",");
             }
             System.out.println("]");
         }
+        System.out.println("______________________________________________________________________________________\n");
 
-        System.out.println("");
-
-        System.out.println("************************ Exploration ************************");
+        System.out.println("_____________________________________ Exploration _____________________________________");
         resetState();
         while (!finished()) {
             int act = chooseAction(0); // faire juste l'exploitation
-            System.out.println("State : "+(stateI*GRID_SIZE+stateJ)+"\t  Action : "+act);
+            System.out.println("State : " + (stateI * GRID_SIZE + stateJ) + "\t  Action : " + Action(act));
             executeAction(act);
         }
-        System.out.println("Final state : "+(stateI*GRID_SIZE+stateJ));
+        System.out.println("______________________________________________________________________________________");
+        System.out.println("Final state : " + (stateI * GRID_SIZE + stateJ));
+        System.out.println("______________________________________________________________________________________");
+    }
+
+    private String Action(int act) {
+        switch (act) {
+            case 0:
+                return "Gauche";
+            case 1:
+                return "Droit";
+            case 2:
+                return "Bas";
+            case 3:
+                return "Haut";
+        }
+        return null;
     }
 
     public void runQLearning() {
