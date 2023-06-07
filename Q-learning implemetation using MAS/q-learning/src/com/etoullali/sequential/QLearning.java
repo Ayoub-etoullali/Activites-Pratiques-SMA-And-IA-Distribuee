@@ -7,7 +7,7 @@ public class QLearning {
     private final double ALPHA = 0.1; //learning rate, determines to what extent newly acquired information overrides old information
     private final double GAMMA = 0.9; //discount rate, determines the importance of future rewards
     private final double EPS = 0.4; //epsilon greedy, determines the probability of taking a random action, rather than action that gives a maximum value of Q
-    private final int MAX_EPOCH = 90000;
+    private final int MAX_EPOCH = 70000;
     private final int GRID_SIZE = 5;
     private final int ACTION_SIZE = 4;
     private int[][] grid;
@@ -36,11 +36,11 @@ public class QLearning {
                 {0, 0, 0}
         };*/
         this.grid = new int[][]{
-                {0, -1, 0, 0, 0},
-                {0, 0, 0, -1, 0},
-                {-1, -1, -1, 0, 0},
-                {-1, 1, -1, 0, -1},
-                {-1, 0, 0, 0, -1}
+                {0,  -1,  0,  0,  0},
+                {0,   0,  0, -1,  0},
+                {-1, -1, -1,  0,  0},
+                {-1,  1, -1,  0, -1},
+                {-1,  0,  0,  0, -1}
         };
         this.actions = new int[][]{
                 {0, -1}, //Gauche
