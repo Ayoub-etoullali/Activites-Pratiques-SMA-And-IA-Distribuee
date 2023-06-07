@@ -16,9 +16,16 @@ Q-Learning is a Reinforcement learning policy that will find the next best actio
      Step 3) Update Q value :
              Q(s,a) = Q(s,a) + ALPHA ( r + γ max[Q(s,a)] − Q(s,a) )
 ```
+## Example :
+![image](https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/29825fe0-3627-4d18-aa18-2392e722d781)
+
+![image](https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/65ade517-484d-4a6c-a85e-f45d60cd2a24)
+
+![image](https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/fe6d60a5-d216-4a16-b386-ca34c409e051)
 
 ## Demo :
 ### (1) sequential
+https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/e2125a78-bf1f-4722-b578-1d515c136931
 
 <div align="center">
        <p>
