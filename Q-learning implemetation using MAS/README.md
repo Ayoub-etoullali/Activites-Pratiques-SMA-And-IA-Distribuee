@@ -1,7 +1,7 @@
 # Q-learning implemetation 
 
 ## What Is Q-Learning?
-Q-Learning is a Reinforcement learning policy that will find the next best action, given a current state. It chooses this action at random and aims to maximize the reward.
+Q-Learning is a Reinforcement learning policy that will find the next best action, given a current state. It chooses this action at random and aims to maximize the reward. <br>
 ![image](https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/ddda2d6f-922a-4ef5-bd6f-d911068ab964)
 
 ```
