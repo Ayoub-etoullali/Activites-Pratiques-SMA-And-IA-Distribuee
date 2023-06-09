@@ -1,8 +1,15 @@
-package com.etoullali.sequential;
+package com.etoullali.mas.Algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class QLearning {
+    public List<String> chemin = new ArrayList<>();
+    public int in = 1;
+    public int I;
+    public int J;
+    public String state;
     private final double ALPHA = 0.1; //learning rate, determines to what extent newly acquired information overrides old information
     private final double GAMMA = 0.9; //discount rate, determines the importance of future rewards
     private final double EPS = 0.4; //epsilon greedy, determines the probability of taking a random action, rather than action that gives a maximum value of Q
@@ -50,8 +57,22 @@ public class QLearning {
     }
 
     private void resetState() {
-        stateI = 0;
-        stateJ = 0;
+        stateI = I;
+        stateJ = J;
+
+        if (in == 1) {
+            Random rn = new Random();
+            I = rn.nextInt(3);
+            J = rn.nextInt(3);
+            while (grid[I][J] != 0) {
+                I = rn.nextInt(3);
+                stateI = I;
+                J = rn.nextInt(3);
+                stateJ = J;
+            }
+            state = "(" + I + "," + J + ")";
+        }
+        in++;
     }
 
     private int chooseAction(double eps) {
@@ -99,12 +120,22 @@ public class QLearning {
         resetState();
         while (!finished()) {
             int act = chooseAction(0); // faire juste l'exploitation
+            chemin.add(Action(act));
             System.out.println("State : " + (stateI * GRID_SIZE + stateJ) + "\t  Action : " + Action(act));
             executeAction(act);
         }
         System.out.println("______________________________________________________________________________________");
         System.out.println("Final state : " + (stateI * GRID_SIZE + stateJ));
         System.out.println("______________________________________________________________________________________");
+    }
+
+    private void runResult() {
+        resetState();
+        while (!finished()) {
+            int act = chooseAction(0); // faire juste l'exploitation
+            chemin.add(Action(act));
+            executeAction(act);
+        }
     }
 
     private String Action(int act) {
@@ -140,7 +171,8 @@ public class QLearning {
             }
             it++;
         }
-        showResult();
+        //showResult();
+        runResult();
     }
 
 
