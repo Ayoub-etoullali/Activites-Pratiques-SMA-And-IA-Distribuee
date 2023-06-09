@@ -24,8 +24,6 @@ Q-Learning is a Reinforcement learning policy that will find the next best actio
 ![image](https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/fe6d60a5-d216-4a16-b386-ca34c409e051)
 
 ## Demo :
-https://drive.google.com/file/d/19oPislh6lYxo6iPLik7xPYX6YRjBlqNu/view?usp=drivesdk
-
 ### (1) sequential
 https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/e2125a78-bf1f-4722-b578-1d515c136931
 
@@ -36,6 +34,8 @@ https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/ass
 </div>
 
 ### (2) using MAS
+https://drive.google.com/file/d/19oPislh6lYxo6iPLik7xPYX6YRjBlqNu/view?usp=drivesdk
+
 ##### Console
 ![image](https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/6ab705d0-9dc0-4397-a654-ad2b7dcef732)
 ##### JavaFX
