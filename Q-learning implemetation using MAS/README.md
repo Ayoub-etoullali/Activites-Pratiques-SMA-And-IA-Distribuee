@@ -34,12 +34,10 @@ https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/ass
 </div>
 
 ### (2) using MAS
-
-<div align="center">
-       <p>
-       <sup>  <strong>Video -</strong> Q-learning using MAS</sup>
-       </p>
-</div>
+##### Console
+![image](https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/6ab705d0-9dc0-4397-a654-ad2b7dcef732)
+##### JavaFX
+![image](https://github.com/Ayoub-etoullali/Activites-Pratiques-SMA-And-IA-Distribuee/assets/92756846/a2567a9f-b102-4564-85b2-a3d57993c52d)
 
 <br>
 
